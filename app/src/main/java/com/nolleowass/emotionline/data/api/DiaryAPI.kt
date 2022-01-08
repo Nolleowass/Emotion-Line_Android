@@ -9,9 +9,13 @@ import retrofit2.http.*
 
 interface DiaryAPI {
     @GET("diary/list/{user_id}")
-    fun list(@Path("user_id") userId: String): Single<DiaryListResponse>
+    fun list(
+        @Path("user_id") userId: String,
+        @Query("year") year: Int,
+        @Query("month") month: Int
+    ): Single<DiaryListResponse>
 
-    @POST("dairy")
+    @POST("diary/create")
     fun create(@Body request: DiaryRequest): Completable
 
     @PUT("diary/{diary_id}")

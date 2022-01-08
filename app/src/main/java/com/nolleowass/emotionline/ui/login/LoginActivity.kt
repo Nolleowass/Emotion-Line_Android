@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initListener() {
         binding.btnLogin.setOnClickListener {
-            viewModel.login("", "")
+            viewModel.login(binding.txtId.text.toString(), binding.txtPw.text.toString())
         }
     }
 

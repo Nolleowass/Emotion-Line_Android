@@ -23,11 +23,11 @@ sealed class FeedItem {
         override val type = FeedType.TITLE
     }
 
-    data class GraphItem(val diaries: List<Diary>) : FeedItem() {
+    data class GraphItem(val emotionPoints: List<Int>, val month: Int) : FeedItem() {
         override val type = FeedType.GRAPH
     }
 
-    data class Item(val diary: Diary) : FeedItem() {
+    data class DiaryItem(val diary: Diary) : FeedItem() {
         override val type = FeedType.DIARY
     }
 

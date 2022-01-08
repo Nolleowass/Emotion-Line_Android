@@ -22,7 +22,7 @@ class AuthRepository @Inject constructor(
             .flatMapCompletable { response ->
                 Completable.create {
                     sharedPreference.putString(SharedPreferenceConstant.TOKEN_KEY, response.token)
-                    sharedPreference.putString(SharedPreferenceConstant.USER_NAME_KEY, response.name)
+                    sharedPreference.putString(SharedPreferenceConstant.USER_ID_KEY, response.id)
                     it.onComplete()
                 }
             }

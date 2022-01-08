@@ -6,12 +6,19 @@ import androidx.lifecycle.ViewModel
 import com.nolleowass.emotionline.data.preference.SharedPreferenceConstant
 import com.nolleowass.emotionline.data.preference.SharedPreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.kotlin.addTo
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 @HiltViewModel
 class SplashViewModel @Inject constructor(
     private val sharedPreferenceManager: SharedPreferenceManager
 ) : ViewModel() {
+
+    private val disposable = CompositeDisposable()
 
     private val _status = MutableLiveData<SplashViewStatus>()
     val status: LiveData<SplashViewStatus>
@@ -22,7 +29,12 @@ class SplashViewModel @Inject constructor(
     }
 
     private fun checkAutoLogin() {
-        _status.value = if (isAutoLogin()) SplashViewStatus.AUTO_LOGIN else SplashViewStatus.LOGIN
+        Observable.just(isAutoLogin())
+            .delay(1, TimeUnit.SECONDS)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                _status.value = if (it) SplashViewStatus.AUTO_LOGIN else SplashViewStatus.LOGIN
+            }.addTo(disposable)
     }
 
     private fun isAutoLogin(): Boolean {

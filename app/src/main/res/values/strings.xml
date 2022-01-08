@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">EmotionLine</string>
+    <string name="app_name">글자리</string>
 
     <string name="error_login">로그인 실페</string>
-    <string name="error_feed_dairy">일기 데이터 에러</string>
+    <string name="error_load_feed">데이터 로드 실패</string>
+    <string name="error_write_diary">일기 작성 실패</string>
+    <string name="error_delete_diary">일기 삭제 실패</string>
 
     <string name="word_edit">수정</string>
     <string name="word_delete">삭제</string>

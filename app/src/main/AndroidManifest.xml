@@ -3,8 +3,6 @@
     package="com.nolleowass.emotionline"
     >
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".EmotionLineApplication"
         android:allowBackup="false"
@@ -13,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmotionLine"
+        android:usesCleartextTraffic="true"
         >
 
         <activity
@@ -29,7 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.login.LoginActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -38,7 +36,6 @@
             android:screenOrientation="behind"
             android:windowSoftInputMode="stateVisible"
             />
-
         <activity
             android:name=".ui.feed.FeedActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -47,5 +44,16 @@
             android:screenOrientation="behind"
             android:windowSoftInputMode="stateVisible"
             />
+        <activity
+            android:name=".ui.write.WriteActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="stateVisible"
+            />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>

@@ -9,7 +9,10 @@ import javax.inject.Inject
 class ProfileRepository @Inject constructor(private val api: ProfileAPI) {
 
     fun list(): Single<List<User>> =
-        api.list().map { list ->
-            list.map { it.toModel() }
+        api.list().map { response ->
+            response.list.map { it.toModel() }
+        }.flatMap {
+            if (it.isNotEmpty()) Single.just(it)
+            else Single.error(Throwable("Empty"))
         }
 }

@@ -10,8 +10,8 @@ import javax.inject.Inject
 
 class DiaryRepository @Inject constructor(private val api: DiaryAPI) {
 
-    fun list(userId: String): Single<List<Diary>> =
-        api.list(userId).map { response ->
+    fun list(userId: String, year: Int, month: Int): Single<List<Diary>> =
+        api.list(userId, year, month).map { response ->
             response.list.map { it.toModel() }
         }
 
