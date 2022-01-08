@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EmotionLine</string>
+
+    <string name="error_login">로그인 실페</string>
 </resources>

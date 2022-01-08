@@ -13,5 +13,5 @@ class SharedPreferenceManager @Inject constructor(private val application: Appli
         spf.edit { putString(key, value) }
     }
 
-    fun getString(key: String, default: String): String? = spf.getString(key, default)
+    fun getString(key: String): String? = spf.getString(key, null)
 }
