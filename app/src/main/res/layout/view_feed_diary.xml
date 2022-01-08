@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="12dp"
+                >
+
+                <TextView
+                    android:id="@+id/txt_crate_at"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    tools:text="1월 2일 일요일"
+                    />
+
+                <TextView
+                    android:id="@+id/btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/word_edit"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/word_delete"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f9f8fd"
+                >
+
+                <ImageView
+                    android:id="@+id/img_emotion"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_very_bad"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_emotion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:textColor="@color/primary_d"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/img_emotion"
+                    app:layout_constraintTop_toTopOf="@+id/img_emotion"
+                    tools:text="Very Good!"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_emotion_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_emotion"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_emotion"
+                    tools:text="좋음 지수 98점, 멋진 하루를 보내셨네요!"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="11dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_emotion"
+                    tools:text="이름자 피어나듯이 아무 봄이 이름과, 너무나 아스라히 거외다. 어머니, 못 하나에 하늘에는 가을 부끄러운 사람들의 거외다. 이 패, 사람들의 이름을 이런 듯합니다. 이 아이들의 슬퍼하는 마리아 이름과 멀리 같이 봅니다. 아직 자랑처럼 까닭이요, 아스라히 하나에 딴은 때 아무 아이들의 계십니다."
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,4 +68,7 @@ dependencies {
     // Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    // Chart
+    implementation "com.github.PhilJay:MPAndroidChart:v$MPAndroidChartVersion"
 }

@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nolleowass.emotionline.data.preference.SharedPreferenceConstant
 import com.nolleowass.emotionline.data.preference.SharedPreferenceManager
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
+@HiltViewModel
 class SplashViewModel @Inject constructor(
     private val sharedPreferenceManager: SharedPreferenceManager
 ) : ViewModel() {

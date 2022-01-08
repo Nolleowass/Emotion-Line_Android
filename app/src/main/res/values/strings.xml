@@ -2,4 +2,8 @@
     <string name="app_name">EmotionLine</string>
 
     <string name="error_login">로그인 실페</string>
+    <string name="error_feed_dairy">일기 데이터 에러</string>
+
+    <string name="word_edit">수정</string>
+    <string name="word_delete">삭제</string>
 </resources>

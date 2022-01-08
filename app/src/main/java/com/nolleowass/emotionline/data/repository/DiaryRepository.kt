@@ -11,8 +11,8 @@ import javax.inject.Inject
 class DiaryRepository @Inject constructor(private val api: DiaryAPI) {
 
     fun list(userId: String): Single<List<Diary>> =
-        api.list(userId).map { list ->
-            list.map { it.toModel() }
+        api.list(userId).map { response ->
+            response.list.map { it.toModel() }
         }
 
     fun create(content: String): Completable =

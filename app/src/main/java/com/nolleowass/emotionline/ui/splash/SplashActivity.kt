@@ -19,6 +19,7 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initBind()
+        initObserve()
     }
 
     private fun initBind() {
