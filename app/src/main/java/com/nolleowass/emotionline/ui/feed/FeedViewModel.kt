@@ -66,7 +66,7 @@ class FeedViewModel @Inject constructor(
             .networkOn()
             .subscribe({ diaries ->
                 _feedDiaryItems.add(FeedItem.GraphItem(diaries.map { it.emotionPoint }, currentMonth))
-                diaries.find { it.createAt?.toString("dd")?.toInt() == currentDay }
+                diaries.findLast { it.createAt?.toString("dd")?.toInt() == currentDay }
                     ?.let { _feedDiaryItems.add(FeedItem.DiaryItem(it)) }
 
                 _status.value = FeedViewStatus.FEED_LOADED
